@@ -1,0 +1,282 @@
+@charset "utf-8";
+@import "../../node_modules/mixins-sass/src/mixins";
+@import "mui/variables.scss";
+@import "mui/mixins.scss";
+
+//转场动画
+.fade-transition {
+  @include prefix((transition: opacity .3s ease));
+}
+.fade-enter, .fade-leave {
+  opacity: 0;
+}
+
+html,body{
+	min-height: 100%;
+	height: 100%;
+}
+
+//盒子
+.#{$namespace}transition-content{
+	display: block;
+	width: 100%;
+	min-height: 100%;
+
+}
+
+.#{$namespace}tab-content{
+	@include rem(padding-bottom,100px); 
+	p{
+		margin: 0;
+	}
+}
+
+
+// 重置header
+.#{$namespace}bar-nav{
+	background: #fff;
+	box-shadow: 0 0 0 transparent;
+}
+
+
+//我的问答
+.#{$namespace}user-content{
+	.user-panle{
+		width: 100%;
+		@include rem(height, 260px);
+		background: url(../images/userpanle.png?__inline) no-repeat top center;
+		background-size: 100% 100%;
+		text-align: center;
+		.usre-info{
+			text-align: center;
+			@include rem(padding-top, 30px);
+		}
+		img{
+			@include rem(width, 150px);
+			@include rem(height, 150px);
+			@include prefix((border-radius: 100%));
+		}
+		h1{
+			@include rem(font-size, 30px);
+			color: #fff;
+		}
+	}
+}
+.#{$namespace}fixd-sus{
+	position: fixed;
+	@include rem(bottom, 140px);
+	@include rem(right, 20px);
+	@include rem(width, 90px);
+	z-index: 1000;
+	a{
+		display: block;
+		@include rem(width, 90px);
+		@include rem(height, 90px);
+		@include rem(margin-top, 20px);
+	}
+	.l{
+		background: url(../images/1.png?__sprite) no-repeat;
+		background-size: 100% 100%;
+	}
+	.m{
+		background: url(../images/2.png?__sprite) no-repeat;
+		background-size: 100% 100%;
+	}
+}
+
+//文章详情页
+.#{$namespace}detail-content{
+	background: #f2f2f2;
+	@include rem(padding,88px 20px 20px 20px);
+	.title{
+		color: #525252;
+		@include rem(font-size, 30px);
+		@include rem(padding, 38px 0 32px 0);
+		line-height: 1.5;
+		font-weight: normal;
+	}
+	.time{
+		margin: 0;
+		@include rem(font-size, 22px);
+	}
+	section{
+		@include rem(padding-top, 36px);
+		img{
+			display: block;
+			max-width: 100%;
+			@include rem(margin-bottom, 20px);
+		}
+	}
+}
+
+.#{$namespace}tab{
+	width:100%;
+	@include rem(height,80px);
+	@include rem(line-height,80px);
+	border-bottom: 1px solid #e1e1e1;
+	font-size: 0;
+	>a{
+		display: inline-block;
+		width: 50%;
+		@include rem(height,80px);
+		text-align: center;
+		color: #004a90;
+		@include rem(font-size,32px);
+	}
+	.#{$namespace}active{
+
+		background-color: #004a90;
+		color:#fff;
+	}
+}
+//tab-content  首席诊股
+.#{$namespace}username,.#{$namespace}teachername{
+	@include rem(padding,30px 24px);
+	border-bottom: 1px solid #e1e1e1;
+	.#{$namespace}username-img{
+		display:inline-block;
+		// width: 30%;
+		>img{
+			@include rem(height,90px);
+			@include rem(width,90px);
+		}
+	
+	}
+	.username-title{
+		display:inline-block;
+		width: 85%;
+		vertical-align: top;
+		@include rem(margin-top,6px);
+		.username{
+			@include rem(font-size,28px);
+			color:#004a90;
+		}
+		.#{$namespace}time{
+			color:#979797;
+			@include rem(font-size,20px);
+		}
+		.problem{
+			color:#525252;
+			@include rem(font-size,24px);
+			white-space: nowrap;
+			text-overflow:ellipsis; 
+			overflow:hidden;
+		}
+		//老师简介
+		.Dance-teachers{
+			color:#979797;
+			@include rem(font-size,22px);
+		}
+	}
+	.teacher-answer{
+		color:#525252;
+		@include rem(font-size,20px);
+		margin-left:15%;
+		background-color: #fbfae3;
+		@include rem(padding,24px 30px 24px 24px);
+		@include prefix((box-shadow: -3px -4px 5px #d8d6bc),webkit);
+		>span{
+			color:#1f1f1f;
+		}
+	}
+	.teacher-SMS{
+		margin-left:15%;
+		@include rem(font-size,24px);
+		color:#525252;
+	}
+}
+//尾部
+.#{$namespace}footer{
+	position: fixed;
+	background-color: #fff;
+	width: 100%;
+	bottom: 0;
+	z-index: 1000;
+	@include prefix((box-shadow: 0 -1px 1px #d8d6bc),webkit);
+	.input-answer{
+		@include rem(margin-bottom,24px);
+		button{
+			margin-left: 5%;
+			@include rem(padding,24px 0 12px);
+			border: none;
+			width: 90%;
+			border-bottom: 1px solid #e1e1e1;
+			@include rem(font-size,30px);
+			color:#979797;
+			&:active{
+				background-color: #fff;
+				color:#979797;
+				@include rem(font-size,30px);
+			}
+		}
+	}
+}
+
+//投资参考
+.analyze-box{
+	display: block;
+	border-bottom: 1px solid #e1e1e1;
+	@include rem(padding,24px 24px 0);
+	.analyze-text{
+		color:#525252;
+		@include rem(font-size,32px);
+		@include rem(height,84px);
+		overflow: hidden; /*自动隐藏文字*/
+    	text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    	display: -webkit-box;
+    	display: box;
+    	@include prefix((line-clamp:2),webkit);
+		@include prefix((box-orient:vertical),webkit);
+
+	}
+	.analyze-time{
+		@include rem(font-size,22px);
+		color:#979797;
+		overflow: hidden;
+	}
+}
+
+//提问盒子
+.#{$namespace}popup-box{
+	width: 100%;
+	.popup-header{
+		@include rem(height,100px);
+		@include rem(padding, 0 15px 0 15px);
+		span{
+			@include rem(font-size, 30px);
+			color: #525252;
+			display: block;
+			height: 100%;
+			@include rem(line-height, 100px);
+		}
+		a{
+			display: block;
+			@include rem(width, 68px);
+			@include rem(height, 68px);
+			background: url(../images/close.png?__sprite) no-repeat center center;
+			background-size: 50% 50%;
+			@include rem(margin, 12px 0 0 0);
+		}
+	}
+	.popup-content{
+		.box{
+			textarea{
+				@include prefix((appearance:none));
+				@include prefix((border-radius:0));
+				border-right: 0 none;
+				border-left: 0 none;
+				@include rem(height,235px);
+				resize: none;
+			}
+		}
+		.subbtn{
+			@include rem(padding, 0 15px 0 15px);
+			text-align: right;
+			button{
+				background: #004a90;
+				color: #fff;
+				border: 0 none;
+			}
+		}
+	}
+}

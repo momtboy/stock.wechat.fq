@@ -1,0 +1,39 @@
+.#{$namespace}plus-visible,.#{$namespace}wechat-visible{
+    display: none!important;
+}
+.#{$namespace}plus-hidden,.#{$namespace}wechat-hidden{
+    display: block!important;
+}
+.#{$namespace}tab-item.#{$namespace}plus-hidden,.#{$namespace}tab-item.#{$namespace}wechat-hidden{
+    display: table-cell!important;
+}
+.#{$namespace}plus .#{$namespace}plus-visible,.#{$namespace}wechat .#{$namespace}wechat-visible{
+	display: block!important;
+}
+.#{$namespace}plus .#{$namespace}tab-item.#{$namespace}plus-visible,.#{$namespace}wechat .#{$namespace}tab-item.#{$namespace}wechat-visible{
+    display: table-cell!important;
+}
+.#{$namespace}plus .#{$namespace}plus-hidden,.#{$namespace}wechat .#{$namespace}wechat-hidden{
+    display: none!important;
+}
+
+
+//ios
+.#{$namespace}plus.#{$namespace}statusbar.#{$namespace}statusbar-offset{
+    .#{$namespace}bar-nav {
+        padding-top: 1rem;
+        height:3.2rem;
+        &~.#{$namespace}content {
+            padding-top: 3.2rem;
+            .#{$namespace}pull-top-pocket {
+                top: 3.2rem;
+            }
+        }
+    }
+    .#{$namespace}bar-header-secondary {
+        top: 3.2rem;
+        &~.#{$namespace}content {
+            padding-top: 4.7rem;
+        }
+    }
+}

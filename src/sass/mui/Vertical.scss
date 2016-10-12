@@ -1,0 +1,27 @@
+//
+// rem
+//
+// ---------------------------------------------
+// Vertical screen
+
+$baseWidth: 375px;
+$baseFont: 20px;
+html {
+  font-size: $baseFont;
+  outline: 0;
+  font-family: sans-serif; // 1
+  -ms-text-size-adjust: 100%; // 2
+  -webkit-text-size-adjust: 100%; // 2
+}
+$bps: 320px, 315px, 345px, 360px, 375px, 400px, 414px, 430px, 454px, 460px, 480px, 500px, 520px, 540px, 560px, 580px, 600px, 620px, 640px, 680px, 700px,720px, 750px, 800px,960px;
+@each $i in $bps {
+	$font: $i  /  $baseWidth  *  $baseFont;
+	@media only screen and (min-width: $i){
+	    html {
+	      font-size: $font !important;
+	    }
+	  }
+}
+html {
+    font-size: calc(2 * 100vw / 37.5) !important;
+}

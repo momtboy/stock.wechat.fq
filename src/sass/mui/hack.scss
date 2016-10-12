@@ -1,0 +1,19 @@
+.#{$namespace}android.#{$namespace}android-4-0 {
+input,
+textarea{
+    &:focus{
+        -webkit-user-modify: inherit;
+    }
+}	
+}
+.#{$namespace}android.#{$namespace}android-4-2,.#{$namespace}android.#{$namespace}android-4-3 {
+input,
+textarea{
+    -webkit-user-select: text;
+}   
+}
+
+.#{$namespace}ios .#{$namespace}table-view-cell {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
